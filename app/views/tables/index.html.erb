@@ -1,0 +1,10 @@
+<h1>Your Plan A Tables</h1>
+<% @tables.each do |table| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to table.title, table %>
+      </h4>
+    </div>
+  </div>
+<% end %>
