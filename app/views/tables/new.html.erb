@@ -1,2 +1,34 @@
-<h1>Tables#new</h1>
-<p>Find me in app/views/tables/new.html.erb</p>
+<h1> Your New Plan A Restaurant</h1>
+ 
+ <div class="row">
+  <div class="span-6">
+    <p> for new restaurants:</p>
+    <ul>
+      <li>Make sure content is appropriate.</li>
+      <li>Make sure lala.</li>
+      <li>Make sure lala.</li>
+      
+    </ul>
+  </div>
+  <div class="span-6">
+    <%= form_for @table, html:{class: 'form-horizontal'} do |f| %>
+     <div class="control-group">
+       <%= f.label :name, class: 'control-label' %>
+       <div class="controls">
+         <%= f.text_field :title %>
+       </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :about_it %>
+        <div class="controls">
+          <%= f.text_area :body, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit "Save" %>
+        </div>
+      </div>
+  <% end %>
+  </div>
+</div>
