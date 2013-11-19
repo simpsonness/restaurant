@@ -1,13 +1,21 @@
 Restaurant::Application.routes.draw do
-  get "comments/create"
+  get "reservations/show"
+  get "reservations/new"
+  get "reservations/edit"
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   resources :users
   resources :sessions
-  resources :tables
-  
-  match "about" => 'welcome#about', via: :get
+  resources :tables do
+    resources :comments, :except => [:index]
+    resources :reservations, :except => [:index]
+  end
+
+
+
+  get "about" => "welcome#about", :as => "about"
+  # match "about" => 'welcome#about', via: :get
 
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

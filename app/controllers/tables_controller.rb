@@ -5,6 +5,7 @@ class TablesController < ApplicationController
 
   def show
     @table = Table.find(params[:id])
+    @comment = Comment.new(:table_id => @table.id)
   end
 
   def new

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :comments
-  has_many :tables
+  has_many :tables, :through => :comments 
+  has_many :reservations
 
   authenticates_with_sorcery!
 

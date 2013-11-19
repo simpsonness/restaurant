@@ -37,6 +37,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'irbtools', require: false
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

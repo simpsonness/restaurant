@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
+  before_filter :load_table
 
   def show
     @comment = Comment.find(params[:id])
   end
 
   def create
-    load_table
-    @comment = @table.comment.build(comment_params)
+    @comment = @table.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
       redirect_to tables_path, notice: 'Comment created successfully'
